@@ -11,16 +11,13 @@
 
 ## Equipo
 
-- Nombre del grupo
+- Nombre del grupo: chicken-jockey
 
-- Legajo: **Completar**
-- Nombre: **Completar**
+- Legajo: **1633867**
+- Nombre: **Emanuel Prima**
 
-- Legajo: **Completar**
-- Nombre: **Completar**
-
-- Legajo: **Completar**
-- Nombre: **Completar**
+- Legajo: **2208623**
+- Nombre: **Thiago Piccoli**
 
 
 ## El enunciado
