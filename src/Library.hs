@@ -3,7 +3,7 @@ import PdePreludat
 import Data.Bool (Bool)
 
 data Ingrediente =
-    Carne | Pan | Panceta | Cheddar | Pollo | Curry | QuesoDeAlmendras
+    Carne | Pan | Panceta | Cheddar | Pollo | Curry | QuesoDeAlmendras | Papas
     deriving (Eq, Show)
 
 precioIngrediente Carne = 20
@@ -21,7 +21,7 @@ data Hamburguesa = Hamburguesa {
 
 cuartoDeLibra = Hamburguesa 20 [Pan, Carne, Cheddar, Pan]
 
---Punto 1
+-- Punto 1
 
 esCarne :: Ingrediente -> Bool
 esCarne ingrediente = ingrediente == Carne
@@ -44,3 +44,15 @@ descuento porcentaje (Hamburguesa precioBase ingredientes) = Hamburguesa (precio
 pdepBurger :: Hamburguesa
 pdepBurger = descuento 20 . agregarIngrediente Panceta . agregarIngrediente Cheddar . agrandar . agrandar cuartoDeLibra
 
+-- Punto 2
+
+dobleCuarto :: Hamburguesa
+dobleCuarto = agregarIngrediente Cheddar . agrandar cuartoDeLibra
+
+bigPdep :: Hamburguesa
+bigPdep = agregarIngrediente Curry dobleCuarto
+
+precioIngrediente Papas = 10
+
+delDia :: Hamburguesa -> Hamburguesa
+delDia hamburguesa = descuento 30 . agregarIngrediente Papas hamburguesa
