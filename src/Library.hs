@@ -38,4 +38,9 @@ agrandar (Hamburguesa precioBase ingredientes)
 agregarIngrediente :: Ingrediente -> Hamburguesa -> Hamburguesa
 agregarIngrediente ingredienteAgregado hamburguesa = hamburguesa {ingredientes = ingredienteAgregado : ingredientes}
 
-descuento ::
+descuento :: Number -> Hamburguesa -> Hamburguesa
+descuento porcentaje (Hamburguesa precioBase ingredientes) = Hamburguesa (precioBase * (1 - porcentaje / 100)) ingredientes
+
+pdepBurger :: Hamburguesa
+pdepBurger = descuento 20 . agregarIngrediente Panceta . agregarIngrediente Cheddar . agrandar . agrandar cuartoDeLibra
+
